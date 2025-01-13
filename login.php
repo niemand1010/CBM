@@ -35,5 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Login</button>
     </form>
     <p>Noch keinen Account? <a href="register.php">Registrieren</a></p>
+    <p>Oder ohne Anmeldung <a href="game.php">spielen</a></p>
 </body>
 </html>

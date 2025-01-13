@@ -2,10 +2,7 @@
 session_start();
 require 'includes/functions.php';
 
-if (!isset($_SESSION['loggedin'])) {
-    header('Location: login.php');
-    exit;
-}
+
 
 // DB-Verbindung annehmen
 // Beispiel: $con = new mysqli('localhost', 'user', 'pass', 'database');
@@ -107,7 +104,7 @@ if ($stmt = $con->prepare('SELECT kategorie, wort FROM ergebnisse WHERE user = ?
     </script>
 </head>
 <body>
-    <h1>Willkommen, <?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?>!</h1>
+    <h1>Willkommen, <?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username'], ENT_QUOTES) : 'Nutzer'; ?>!</h1>
     <a href="logout.php">Logout</a>
 
     <form method="post">
